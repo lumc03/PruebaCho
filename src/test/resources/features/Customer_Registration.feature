@@ -17,8 +17,8 @@ Feature: Register a new customer
     And search for the "<CustomerId>" of the added customer
     Then should see the new customer in the list
     Examples:
-      | Body      | CustomerId | CompanyName | ContactName | ContactTitle | Representatives | Address      | Country | City     | Phone         | Email          |
-      | ValidData | JKL        | KOULES      | Juana Meyer | Sales Agent  | Andrew Fuller   | Ober Str. 57 | Brazil  | Campinas | 0721-12 34 48 | juna@gmail.com |
+      | Body      | CustomerId | CompanyName | ContactName | ContactTitle | Representatives | Address       | Country | City     | Phone        | Email             |
+      | ValidData | OPL        | OPALCIO     | Kathe Holm  | Sales Agent  | Andrew Fuller   | St. Seatle 25 | Brazil  | Campinas | 458 896 8758 | opalcio@gmail.com |
 
 
   Scenario Outline: add a new customer with empty mandatory fields
@@ -38,8 +38,8 @@ Feature: Register a new customer
     Then  the page should display a "<Message>"
 
     Examples:
-      | Body         | CustomerId | CompanyName | ContactName | ContactTitle | Representatives | Address      | Country | City     | Phone         | Email          | Message                                                                               |
-      | invalidPhone | WAKA       | WAJAKA      | Jhon Mike   | Sales Agent  | Andrew Fuller   | Ober Str. 57 | Brazil  | Campinas | 0721-12 34 48 | jhon@gmail.com | Please validate empty or invalid inputs (marked with red) before submitting the form. |
+      | Body         | CustomerId | CompanyName | ContactName | ContactTitle | Representatives | Address      | Country | City | Phone         | Email             | Message                                                                               |
+      | invalidPhone | WERT       | WHESTOL     | Deid Muller | Sales Agent  | Andrew Fuller   | Mull Obre 34 | Austria | Graz | 0921-59 79 48 | whestol@gmail.com | Please validate empty or invalid inputs (marked with red) before submitting the form. |
 
   Scenario Outline: add a new customer with email structure invalid
     When enter the data into the form
@@ -48,9 +48,9 @@ Feature: Register a new customer
     Then  the page should display a "<Message>"
 
     Examples:
-      | Body         | CustomerId | CompanyName | ContactName | ContactTitle | Representatives | Address      | Country | City     | Phone         | Email    | Message                                                                               |
-      | invalidEmail | WAKA       | WAJAKA      | Jhon Mike   | Sales Agent  | Andrew Fuller   | Ober Str. 57 | Brazil  | Campinas | 0721-12 34 48 | jhon.com | Please validate empty or invalid inputs (marked with red) before submitting the form. |
-      | invalidEmail | WAKA       | WAJAKA      | Jhon Mike   | Sales Agent  | Andrew Fuller   | Ober Str. 57 | Brazil  | Campinas | 0721-12 34 48 | jhon@    | Please validate empty or invalid inputs (marked with red) before submitting the form. |
+      | Body         | CustomerId | CompanyName | ContactName | ContactTitle | Representatives | Address      | Country | City      | Phone         | Email    | Message                                                                               |
+      | invalidEmail | JLPO       | JOULPE      | Jhon Mike   | Sales Agent  | Andrew Fuller   | Ober Str. 57 | Canada  | Vancoyver | 0721-12 34 48 | jhon.com | Please validate empty or invalid inputs (marked with red) before submitting the form. |
+      | invalidEmail | JLPO       | JOULPE      | Jhon Mike   | Sales Agent  | Andrew Fuller   | Ober Str. 57 | Brazil  | Campinas  | 0721-12 34 48 | jhon@    | Please validate empty or invalid inputs (marked with red) before submitting the form. |
 
 
 
