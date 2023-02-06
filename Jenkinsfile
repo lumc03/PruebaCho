@@ -18,14 +18,8 @@ pipeline {
 
         stage('Ejecutar Pruebas') {
             steps {
-                script {
-                    try {
-                        sh './gradlew clean test'
+                 sh './gradlew clean test'
 
-                    } catch (ex) {
-                        echo 'Test Ejecutados con Fallo'
-                        currentBuild.result = 'UNSTABLE'
-                    }
                 }
             }
         }
