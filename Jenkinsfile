@@ -20,10 +20,8 @@ pipeline {
             steps {
                 script {
                     try {
+                        sh './gradlew clean test'
 
-                        bat("gradle clean test aggregate") //Ejecución en agente windows sin parametro jenkins
-                        echo 'Test Ejecutados sin Fallo'
-                        currentBuild.result = 'SUCCESS'
                     } catch (ex) {
                         echo 'Test Ejecutados con Fallo'
                         currentBuild.result = 'UNSTABLE'
@@ -60,18 +58,6 @@ pipeline {
                         currentBuild.result = 'SUCCESS'
                     }
                 }
-            }
-        }
-        stage('SonarQube analysis') {
-            steps {
-                script {
-                    scannerHome = tool 'SonarQubeScanner'
-                    //mismo nombre del servidor configurado en las Global Tools Jenkins
-                }
-                withSonarQubeEnv('sonarQube')//mismo nombre del servidor configurado en la configuracion del sistema jenkins
-                        {
-                            bat 'sonar-scanner'
-                        }
             }
         }
     }
