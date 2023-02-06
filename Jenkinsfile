@@ -12,7 +12,7 @@ pipeline {
         stage('Obtener Fuentes') {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: "main"]],
-                          wdoGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[, url: "https://github.com/lumc03/PruebaCho"]]])
+                          wdoGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[ url: "https://github.com/lumc03/PruebaCho"]]])
             }
         }
 
