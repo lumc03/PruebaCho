@@ -1,17 +1,8 @@
 pipeline {
-    agent any
+    agent {label 'main'}
     stages {
-        stage('Clonar repositorio') {
-            steps {
-                git 'https://github.com/lumc03/PruebaCho.git'
-            }
-        }
-        stage('Compilación') {
-            steps {
-                sh './gradlew build'
-            }
-        }
-        stage('Ejecutar pruebas') {
+
+        stage('test'){
             steps {
                 sh './gradlew clean test'
             }
