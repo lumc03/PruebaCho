@@ -18,7 +18,7 @@ Feature: Register a new customer
     Then should see the new customer in the list
     Examples:
       | Body      | CustomerId | CompanyName | ContactName | ContactTitle | Representatives | Address       | Country | City     | Phone        | Email             |
-      | ValidData | OPL        | OPALCIO     | Kathe Holm  | Sales Agent  | Andrew Fuller   | St. Seatle 25 | Brazil  | Campinas | 458 896 8758 | opalcio@gmail.com |
+      | ValidData | PALACIO       | OPALCIO     | Kathe Holm  | Sales Agent  | Andrew Fuller   | St. Seatle 25 | Brazil  | Campinas | 458 896 8758 | opalcio@gmail.com |
 
 
   Scenario Outline: add a new customer with empty mandatory fields
