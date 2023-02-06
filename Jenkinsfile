@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('subir repo}
+        stage('subir repo)
             steps {
                 git 'https://github.com/lumc03/PruebaCho.git'
             }
