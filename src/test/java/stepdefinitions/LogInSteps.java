@@ -1,13 +1,11 @@
 package stepdefinitions;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.serenitybdd.screenplay.actions.OpenUrl;
-import net.serenitybdd.screenplay.ensure.Ensure;
-import questions.LogIn.SuccessfulLogIn;
-import questions.LogIn.UnsuccessfulLogIn;
+import questions.login.SuccessfulLogIn;
+import questions.login.UnsuccessfulLogIn;
 import task.EnterLogInData;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -19,7 +17,7 @@ public class LogInSteps {
     @Given("^the user navigates to the login page$")
     public void theUserNavigatesToTheLoginPage() {
 
-        theActorInTheSpotlight().wasAbleTo(new OpenUrl(URl));
+        theActorInTheSpotlight().wasAbleTo(new OpenUrl(URL));
     }
 
     @When("^enter the login data \"([^\"]*)\" and \"([^\"]*)\" in the form$")

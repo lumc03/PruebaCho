@@ -1,4 +1,4 @@
-package questions.LogIn;
+package questions.login;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;

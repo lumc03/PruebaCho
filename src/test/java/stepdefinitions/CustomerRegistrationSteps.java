@@ -4,11 +4,11 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-import questions.Customers.WrongData;
-import questions.Customers.NewCustomer;
-import task.CostumerModule.EnterCustomerData;
-import task.CostumerModule.LinkCustomerModule;
-import task.CostumerModule.SearchAddCustomer;
+import questions.customers.WrongData;
+import questions.customers.NewCustomer;
+import task.costumermodule.EnterCustomerData;
+import task.costumermodule.LinkCustomerModule;
+import task.costumermodule.SearchAddCustomer;
 
 import java.util.List;
 import java.util.Map;
