@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('subir repo')
+        stage('Clonar repositorio') {
             steps {
                 git 'https://github.com/lumc03/PruebaCho.git'
             }
@@ -17,5 +17,9 @@ pipeline {
             }
         }
     }
-
-    
+    post {
+        always {
+            junit 'build/test-results/*/.xml'
+        }
+    }
+}
