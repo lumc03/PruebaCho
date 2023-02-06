@@ -14,7 +14,6 @@ pipeline {
         stage('Ejecutar pruebas') {
             steps {
                 sh './gradlew clean test'
-'
             }
         }
     }
