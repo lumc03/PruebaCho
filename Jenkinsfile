@@ -1,20 +1,22 @@
-#!groovy
-
 pipeline {
     agent any
     stages {
-        stage('Obtener Fuentes') {
+        stage('subir repo}
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: "main"]],
-                          wdoGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[ url: "https://github.com/lumc03/PruebaCho"]]])
+                git 'https://github.com/lumc03/PruebaCho.git'
             }
         }
-
-        stage('Ejecutar Pruebas') {
+        stage('Compilación') {
             steps {
-                 sh './gradlew clean test'
-
-                }
+                sh './gradlew build'
             }
         }
-}
+        stage('Ejecutar pruebas') {
+            steps {
+                sh './gradlew clean test'
+'
+            }
+        }
+    }
+
+    
